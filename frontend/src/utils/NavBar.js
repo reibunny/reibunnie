@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../styles/navbar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
 	return (
@@ -15,7 +16,7 @@ export default function NavBar() {
 
 				<div className="nav-content">
 					<label for="check" className="checkbox">
-						<FontAwesomeIcon icon="fa-solid fa-bars" />
+						<FontAwesomeIcon icon={faBars} />
 					</label>
 					<input type="checkbox" name="check" id="check" />
 					<ul>

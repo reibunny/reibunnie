@@ -1,0 +1,62 @@
+.projects {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.landing.content {
+	height: 75vh;
+	margin-left: 5vw;
+	display: flex;
+
+	.card {
+		display: flex;
+		font-size: 2rem;
+		align-items: center;
+		gap: 2vw;
+
+		.text {
+			.above {
+				margin-bottom: -5px;
+			}
+
+			span {
+				font-size: 1.5rem;
+			}
+
+			.middle {
+				font-size: 5rem;
+			}
+		}
+
+		.picture img {
+			height: auto;
+			width: 20rem;
+			border-radius: 50%;
+		}
+	}
+
+	.socials {
+		font-size: 3rem;
+		display: flex;
+
+		.social a {
+			margin: 0.7vh 12px 0 0;
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 90vw;
+
+		.picture img {
+			min-height: 33rem;
+			min-width: 33rem;
+		}
+	}
+}

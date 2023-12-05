@@ -1,0 +1,25 @@
+.projects.content {
+	.cards {
+		display: flex;
+		gap: 10px;
+
+		.card {
+			width: calc(33.33vw - 20px);
+			height: calc((33.33vw - 20px) * 9 / 16);
+			background-color: grey;
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.projects.content {
+		.cards {
+			flex-direction: column;
+
+			.card {
+				width: 90vw;
+				height: 50.625vw;
+			}
+		}
+	}
+}

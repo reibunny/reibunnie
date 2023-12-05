@@ -32,6 +32,7 @@ body {
 
 a {
 	text-decoration: none;
+	letter-spacing: 1px;
 	color: var(--primary-color);
 	font-weight: 700;
 }
@@ -42,4 +43,21 @@ a:hover {
 
 a.active {
 	color: var(--secondary-color);
+}
+
+span {
+	color: var(--text-light);
+}
+
+::-webkit-scrollbar {
+	width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #d6dee1;
+	border-radius: 2rem;
 }

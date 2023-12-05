@@ -37,3 +37,76 @@
 		display: none;
 	}
 }
+
+@media (max-width: 750px) {
+	.nav .nav-content .checkbox {
+		display: block;
+		font-size: 5rem;
+	}
+
+	.nav .nav-content ul {
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 85px);
+		left: -100%;
+		top: 85px;
+		margin: auto;
+		background-color: var(--text-dark);
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		gap: 6rem;
+	}
+
+	.nav .nav-content ul li a {
+		font-size: 3.5rem;
+		padding-left: 5px;
+	}
+
+	.nav #check:checked ~ ul {
+		left: 0;
+	}
+
+	ul li a {
+		font-size: 1.5rem;
+		position: relative;
+
+		&:hover:before {
+			height: 100%;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			background-color: var(--primary-color-dark);
+			width: 2px;
+			height: 0;
+			top: 0;
+			left: -10px;
+			transition: height 0.3s;
+		}
+	}
+}
+
+@media (min-width: 750px) {
+	.nav .nav-content a {
+		position: relative;
+
+		&:hover:after {
+			width: 100%;
+		}
+	}
+
+	.nav .nav-content a:after {
+		content: "";
+		position: absolute;
+		background-color: var(--primary-color-dark);
+		height: 2px;
+		left: 0;
+		width: 0;
+		bottom: -10px;
+		transition: 0.3s;
+	}
+}
