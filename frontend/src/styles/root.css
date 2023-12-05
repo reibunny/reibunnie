@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap");
+
+/* ------GENERAL------ */
+
+:root {
+	--primary-color: #ff92d7;
+	--primary-color-dark: #b179ff;
+	--secondary-color: #a3f3a3;
+
+	--text-dark: rgb(35, 35, 35);
+	--text-medium: rgb(80, 80, 80);
+	--text-light: rgb(120, 120, 120);
+	--super-light: rgb(245, 245, 245);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: rgb(20, 20, 20);
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 100%;
+	color: var(--super-light);
+}
+
+a {
+	text-decoration: none;
+	color: var(--primary-color);
+	font-weight: 700;
+}
+
+a:hover {
+	color: var(--primary-color-dark);
+}
+
+a.active {
+	color: var(--secondary-color);
+}
