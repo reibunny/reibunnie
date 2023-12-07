@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/projects.scss";
 import { Link } from "react-router-dom";
 
-export default function Projects() {
+export default function Projects({ projectsCount }) {
 	const URL = "http://localhost:1338/api/";
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -13,23 +13,27 @@ export default function Projects() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get(`${URL}projects`, {
+				const response = await axios.get(`${URL}projects?populate=*`, {
 					headers: {
-						Authorization: `bearer ${TOKEN}`, // Replace with your actual API key
+						Authorization: `Bearer ${TOKEN}`,
 					},
 				});
-				setData(response.data);
-				console.log(data);
+
+				const sortedData = await response.data.sort(
+					(a, b) =>
+						new Date(b.attributes.createdAt) - new Date(a.attributes.createdAt)
+				);
+
+				setData(sortedData);
+
+				setLoading(false);
 			} catch (error) {
 				console.error("Error fetching data:", error);
-			} finally {
-				// Set loading to false regardless of success or failure
-				setLoading(false);
 			}
 		};
 
 		fetchData();
-	}, [TOKEN]);
+	}, [TOKEN, data]);
 
 	return (
 		<div className="projects content">
@@ -37,8 +41,17 @@ export default function Projects() {
 				<p>Loading...</p>
 			) : (
 				<div className="cards">
-					{data.data.map((item) => (
-						<div className="card" key={item.id}>
+					{data.data.slice(0, projectsCount).map((item) => (
+						<div
+							className="card"
+							key={item.id}
+							style={{
+								backgroundImage:
+									"url(http://localhost:1338" +
+									`${item.attributes.displayImage.data.attributes.url}` +
+									")",
+								backgroundSize: "contain",
+							}}>
 							<h3>{item.attributes.title}</h3>
 							<p>{item.attributes.description}</p>
 							<Link to={`/projects/${item.attributes.url}`}>

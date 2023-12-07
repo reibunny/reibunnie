@@ -60,7 +60,7 @@ export default function Landing() {
 			<div className="projects">
 				<div className="block">
 					<p>My latest projects...</p>
-					<Projects />
+					<Projects projectsCount={3} />
 				</div>
 			</div>
 		</>

@@ -15,7 +15,7 @@ export default function NavBar() {
 				</div>
 
 				<div className="nav-content">
-					<label for="check" className="checkbox">
+					<label htmlFor="check" className="checkbox">
 						<FontAwesomeIcon icon={faBars} />
 					</label>
 					<input type="checkbox" name="check" id="check" />
